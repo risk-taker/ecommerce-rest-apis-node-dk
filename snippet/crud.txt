@@ -1,0 +1,29 @@
+To create a model we have:
+const user = new User({
+            name,
+            email,
+            password: hashedPassword
+        });
+
+const result = await user.save();
+
+
+User.create({})
+
+TO READ DATA FROM DB
+RefreshToken.findOne({ token: req.body.refresh_token });
+
+TO DELETE DATA FROM DB
+await RefreshToken.deleteOne({ token: req.body.refresh_token });
+
+TO UPDATA DATA TO DB
+document = await Product.findOneAndUpdate(
+                    { _id: req.params.id },
+                    {
+                        name,
+                        price,
+                        size,
+                        ...(req.file && { image: filePath }),
+                    },
+                    { new: true }
+                );
